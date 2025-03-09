@@ -62,7 +62,7 @@ async def server_loop(mtch_mkr: game_queue, plyer_hndlr: player_handler):
 
 SERVER_LOCATION = "server_location"
 PORT = "port"
-CONFIG_FILE = "common/server_config.json"
+CONFIG_FILE = "server_config.json"
 
 def load_config_data():
     with open(CONFIG_FILE, "r") as config_file:

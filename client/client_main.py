@@ -11,7 +11,7 @@ from client.gui.game_screen import disconnected_screen, username_screen
 
 SERVER_LOCATION = "server_location"
 PORT = "port"
-CONFIG_FILE = "common/server_config.json"
+CONFIG_FILE = "server_config.json"
 
 
 def load_config_data():
