@@ -21,6 +21,7 @@ class player_handler:
             )
         await player._kick_player(reason)
         del self.players[player.id]
+        logging.info(f"{player.name} was kicked")
 
     async def kick_player_given_identifier(self, args):
         user_identifier = args[0]

@@ -91,7 +91,7 @@ class player:
                     return
                 try:
                     obj = reconstruct_socket_message(rcv)
-                    logging.info(f"Message from client: {obj}")
+                    logging.debug(f"Message from client: {obj}")
                 except:
                     logging.error(f'Invalid Json "{obj!s}" recieved')
                 message_executor(obj)
@@ -119,11 +119,11 @@ class player:
         async def flush_messages():
             while len(message_out_queue) > 0:
                 message: str = message_out_queue.pop(0)
-                logging.info(f"Message Being Sent {message}")
+                logging.debug(f"Message Being Sent {message}")
                 msg_bytes = prepare_socket_message(message)
                 writer.write(msg_bytes)
                 await writer.drain()
-                logging.info("message sent")
+                logging.debug("Message sent")
 
         async def send_messages():
             while self.connected:
@@ -137,7 +137,7 @@ class player:
             try:
                 validate_message(obj)
                 message_out_queue.append(obj)
-                print("message validated")
+                logging.debug("Message added to message queue")
             except ValueError:
                 logging.error('Invalid message "{obj}" atempted to be sent')
 

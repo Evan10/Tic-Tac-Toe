@@ -73,7 +73,7 @@ def load_config_data():
 
 async def main():
 
-    logging.basicConfig(level=logging.DEBUG)
+    logging.basicConfig(level=logging.INFO)
 
     plyr_hndlr = player_handler()
     mtch_mkr = game_queue()
