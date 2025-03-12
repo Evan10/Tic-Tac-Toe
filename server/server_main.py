@@ -27,7 +27,11 @@ async def handle_client(
     logging.debug(f"ID generated for client {player_id}")
 
     while username is None:
-        message = await reader.readuntil(mt.MESSAGE_SEPARATOR.encode())
+        try:
+            message = await reader.readuntil(mt.MESSAGE_SEPARATOR.encode())
+        except asyncio.IncompleteReadError:
+            logging.debug("Incomplete Read")
+            return
         try:
             obj = reconstruct_socket_message(message)
             logging.debug(f"message:{message}")
