@@ -55,7 +55,7 @@ async def main():
 
     try:
         start_streams = await server_connection(msg_hndlr)
-
+        
         gm.gui_hndlr.switch_screen(username_screen.SCREEN_NAME)
         await start_streams()
 

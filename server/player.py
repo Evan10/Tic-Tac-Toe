@@ -34,6 +34,9 @@ class player:
     def disconnected(self):
         self.connected = False
         self.quit_game_queue()
+        if self.tasks is not None:
+            for task in self.tasks:
+                task.cancel()
         logging.info(f"Player {self.name} disconnected")
 
     async def _kick_player(self, reason="Unknown reason"):
