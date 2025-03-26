@@ -1,4 +1,4 @@
 {
-    "server_location": "127.0.0.1",
+    "server_location": "172.28.0.1",
     "port": "8888"
 }

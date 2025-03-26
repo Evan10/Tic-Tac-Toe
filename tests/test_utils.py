@@ -1,12 +1,11 @@
 import pytest
 
-from utils import is_id, create_id
+from common.utils import is_id, create_id
 
 
 
 #TODO:
 # write pytests
-
 
 def test_is_id():
     
